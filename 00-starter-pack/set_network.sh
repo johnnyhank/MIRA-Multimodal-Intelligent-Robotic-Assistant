@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # 1. 连接无线网络（学创中心WiFi）
-# nmcli dev wifi connect sic-guest password sicguest
+# nmcli dev wifi connect "sic-guest" password "sicguest"
+sudo nmcli connection modify "sic-guest" ipv4.route-metric 50
+sudo nmcli connection down "sic-guest" && sudo nmcli connection up "sic-guest"
 
 # 2. 修改lightdm.conf文件
 LIGHTDM_CONF="/etc/lightdm/lightdm.conf"
