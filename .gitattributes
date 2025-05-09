@@ -1,0 +1,10 @@
+# 对所有文件使用自动检测
+* text=auto
+
+# 明确指定某些文件类型使用LF
+*.sh text eol=lf
+*.py text eol=lf
+
+# Windows特定文件使用CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
