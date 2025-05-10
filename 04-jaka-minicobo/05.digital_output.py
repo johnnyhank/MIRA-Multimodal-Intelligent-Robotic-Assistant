@@ -15,11 +15,11 @@ def main():
     cnt = 0
 
     while cnt < 5:
-        rc.set_digital_output(IO_TOOL, 1, 1)
-        rc.set_digital_output(IO_TOOL, 2, 0)
+        rc.set_digital_output(IO_TOOL, 0, 1)
+        rc.set_digital_output(IO_TOOL, 1, 0)
         time.sleep(0.1)
-        ret1 = rc.get_digital_output(0, 1)
-        ret2 = rc.get_digital_output(0, 2)
+        ret1 = rc.get_digital_output(0, 0)
+        ret2 = rc.get_digital_output(0, 1)
         if ret1[0] == 0 and ret2[0] == 0:
             print(f"Open #{cnt}")
         else:
@@ -27,11 +27,11 @@ def main():
         time.sleep(2)
 
 
-        rc.set_digital_output(IO_TOOL, 1, 0)
-        rc.set_digital_output(IO_TOOL, 2, 1)
+        rc.set_digital_output(IO_TOOL, 0, 0)
+        rc.set_digital_output(IO_TOOL, 1, 1)
         time.sleep(0.1)
-        ret1 = rc.get_digital_output(0, 1)
-        ret2 = rc.get_digital_output(0, 2)
+        ret1 = rc.get_digital_output(0, 0)
+        ret2 = rc.get_digital_output(0, 1)
         if ret1[0] == 0 and ret2[0] == 0:
             print(f"Close #{cnt}")
         else:
