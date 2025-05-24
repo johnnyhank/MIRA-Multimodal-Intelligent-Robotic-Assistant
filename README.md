@@ -6,14 +6,14 @@
 - **LLM理解指令**：将多模态输入初步处理，由Qwen LLM（qwen-plus）进行理解并自行调用对应工具类，实现查询时间、天气、位置、操作本地SQLite数据库、操作机械臂、调用QwenVL 模型进行图像理解等
 - **丰富外设反馈**：在通过网页文字回复的同时，利用音箱提供语音输出，并通过串口与micro：bit通信以提供视觉和声音效果
 - **Qwen Agent框架**：使用Qwen Agent框架编写Function Calling和MCP，避免了冗长复杂的Prompt编写和不确定性，提高正确调用对应工具的概率
-![example1](example_pic/Screenshot_2025-05-24_21-07-06.png)
+![example1](example_show/Screenshot_2025-05-24_21-07-06.png)
 
 ## 功能举例
 如下图片展示了用户语音和文本输入时，MIRA的回复
-![example2](example_pic/Screenshot_2025-05-24_21-05-59.png)
-![example3](example_pic/Screenshot_2025-05-24_21-06-16.png)
-![example4](example_pic/Screenshot_2025-05-24_21-06-46.png)
-![example5](example_pic/Screenshot_2025-05-24_21-05-23.png)
+![example2](example_show/Screenshot_2025-05-24_21-05-59.png)
+![example3](example_show/Screenshot_2025-05-24_21-06-16.png)
+![example4](example_show/Screenshot_2025-05-24_21-06-46.png)
+![example5](example_show/Screenshot_2025-05-24_21-05-23.png)
 ## 环境准备
 硬件环境：香橙派AIPro20T(Ubuntu 22.04)，声卡，音箱，麦克风，相机，JAKA机械臂，microbit v2
 软件配置：使用miniconda创建环境，并安装依赖包
