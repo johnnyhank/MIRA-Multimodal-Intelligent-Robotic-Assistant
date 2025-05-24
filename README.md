@@ -8,8 +8,8 @@
 - **Qwen Agent框架**：使用Qwen Agent框架编写Function Calling和MCP，避免了冗长复杂的Prompt编写和不确定性，提高正确调用对应工具的概率
 ![example1](example_show/Screenshot_2025-05-24_21-07-06.png)
 
-## 功能举例
-如下图片展示了用户语音和文本输入时，MIRA的回复
+## 使用举例
+如下图片展示了用户语音和文本输入时，MIRA的回复，更加详细的演示过程可以参考：example_show/演示视频.mp4
 ![example2](example_show/Screenshot_2025-05-24_21-05-59.png)
 ![example3](example_show/Screenshot_2025-05-24_21-06-16.png)
 ![example4](example_show/Screenshot_2025-05-24_21-06-46.png)
