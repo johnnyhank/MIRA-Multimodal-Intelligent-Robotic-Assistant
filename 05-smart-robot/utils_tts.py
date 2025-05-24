@@ -2,6 +2,7 @@ from playsound import playsound
 import edge_tts as et
 import asyncio
 
+
 async def text_to_speech(text, voice="zh-CN-YunyangNeural", rate="-10%", volume="+10%", pitch="+5Hz"):
     # 合成音频
     communicate = et.Communicate(

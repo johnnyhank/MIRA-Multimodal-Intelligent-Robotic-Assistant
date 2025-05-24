@@ -23,7 +23,7 @@ def initialize_robot():
 def go_initialize_robot_point(robot):
     print("初始起点")
     joint_position = robot.get_joint_position()
-    #print(joint_position)
+    # print(joint_position)
     ret = robot.kine_inverse(joint_position[1],initial_path_point)
     #print(ret)   
     joint_pos = ret[1]
@@ -32,7 +32,7 @@ def go_initialize_robot_point(robot):
 
 #移动到抓取起点位置
 def go_initialize_robot_pointby_gripper(robot):
-    #print("抓取起点")
+    print("抓取起点")
     joint_position = robot.get_joint_position()
     ret = robot.kine_inverse(joint_position[1],initial_path_point_by_gripper)
     #print(ret)

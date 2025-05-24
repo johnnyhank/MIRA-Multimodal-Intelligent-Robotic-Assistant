@@ -7,9 +7,9 @@ import threading
 from threading import main_thread
 import cv2
 
-relation_matrix = np.array([[-2.80316285e-02,6.65940636e-01],
- [-4.71498516e-01,4.82531370e-02],
- [ 1.89347486e+02,3.10735328e+02]]
+relation_matrix = np.array([[-4.42141487e-02, -6.21308817e-01],
+ [ 4.23563997e-01, -1.66642547e-02],
+ [-3.85773354e+01,  7.43229405e+02]]
 )
 def say_hello():
     robot = initialize_robot()
@@ -82,7 +82,7 @@ def vlm_move(target_item):
     robot.joint_move(joint_pos, ABS, False, 1)
 
     # 移动到目标点
-    target_point = [robot_point_homogeneous[0], robot_point_homogeneous[1], -80, 0, 0, -3.14/2]
+    target_point = [robot_point_homogeneous[0], robot_point_homogeneous[1], -21.392958, 0.0019782259536355556, 0.03838326280181889, -1.7363309156176725]
     joint_position = robot.get_joint_position()
     ret = robot.kine_inverse(joint_position[1], target_point)
     joint_pos = ret[1]
@@ -109,4 +109,4 @@ def vlm_move(target_item):
 
 if __name__ == "__main__":
     # say_hello()
-    vlm_move("redapple")
+    vlm_move("peach")

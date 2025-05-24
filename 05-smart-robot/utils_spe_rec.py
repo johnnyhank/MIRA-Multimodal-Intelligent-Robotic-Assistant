@@ -121,8 +121,8 @@ def record_auto(MIC_INDEX=0):
 
 # 百度语音识别api权限验证
 client = AipSpeech(API_Key_utils.BAIDU_APP_ID, API_Key_utils.BAIDU_API_KEY, API_Key_utils.BAIDU_SECRET_KEY)
-def recognize_speech():
-    with open("temp/speech_record.wav", 'rb') as fp:
+def recognize_speech(audio_path="temp/speech_record.wav"):
+    with open(audio_path, 'rb') as fp:
         audio_data = fp.read()
 
     result = client.asr(audio_data, 'wav', 16000, {'dev_pid': 1536})
