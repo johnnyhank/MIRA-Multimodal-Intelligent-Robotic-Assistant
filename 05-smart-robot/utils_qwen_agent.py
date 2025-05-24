@@ -223,40 +223,13 @@ llm_cfg = {
     'model': "qwen-plus",
     'model_type': 'qwen_dashscope',
     'api_key': API_Key_utils.QWEN_KEY,
+    # 'max_tokens': 100,  # 控制每次生成的最大 token 数量
 }
 bot = Assistant(
     llm=llm_cfg,
     function_list=global_tools,
     system_message='你是一个多模态智能机械臂助手，名叫MIRA，你可以查询时间、天气、地理位置，对本地 SQLite 数据库进行增删改查操作，还能操作机械臂、通过串口向microbit发送信息，以及使用通义千问VL进行图像识别。',
 )
-
-# def qwen_agent(prompt: str) -> str:
-#     """
-#     接收 prompt，返回 Qwen Agent 的完整回复字符串，并自动维护历史上下文。
-
-#     参数:
-#         prompt (str): 用户输入的提示语。
-
-#     返回:
-#         str: Qwen Agent 的回复内容。
-#     """
-#     # 初始化历史记录（第一次调用时）
-#     if not hasattr(qwen_agent, 'history'):
-#         qwen_agent.history = []
-
-#     # 添加用户输入到历史
-#     qwen_agent.history.append({'role': 'user', 'content': prompt})
-
-#     response_text = ''
-
-#     # 调用 bot.run 获取回复
-#     for response in bot.run(messages=qwen_agent.history):
-#         response_text += response[-1]['content']
-
-#     # 添加助手回复到历史
-#     qwen_agent.history.append({'role': 'assistant', 'content': response_text})
-
-#     return response_text
 
 def get_full_response(messages):
     full_content = ''

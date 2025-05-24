@@ -3,7 +3,7 @@ import asyncio
 import sys
 import wave
 from utils_spe_rec import *
-# from utils_llm import *
+from utils_llm import *
 from utils_cam import *
 from utils_robot import *
 from utils_agent import *
@@ -14,8 +14,8 @@ from utils_micro_bit import *
 from start import command_cleaning
 from pydub import AudioSegment
 
-# # 初始化microbit串口连接
-# ser = connect_microbit()
+# 初始化microbit串口连接
+ser = connect_microbit()
 
 def convert_to_wav16k1c(src_path, dst_path):
     audio = AudioSegment.from_file(src_path)
@@ -55,12 +55,6 @@ def process_input(text, audio, image, chatbot_state):
     order = agent_plan(text)
     print("智能体编排结果：", order)
     order = command_cleaning(order)
-    # order = order.replace("，", ",")  # 替换中文逗号为英文逗号
-    # order = order.replace("、", ",")  # 替换中文顿号为英文逗号
-    # order = order.replace("；", ";")  # 替换中文分号为英文分号
-    # order = order.replace("！", "!")  # 替换中文感叹号为英文感叹号
-    # order = order.replace("？", "?")  # 替换中文问号为英文问号
-    # order = order.replace("：", ":")  # 替换中文冒号为英文冒号
     
     try:
         agent_plan_output = eval(order)

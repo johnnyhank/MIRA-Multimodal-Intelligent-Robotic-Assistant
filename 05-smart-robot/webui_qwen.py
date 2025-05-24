@@ -37,12 +37,12 @@ def process_input(text, audio, image, chatbot_state):
     if audio is not None:
         tmp_path = "/tmp/converted.wav"
         convert_to_wav16k1c(audio, tmp_path)
-        print("语音识别结果：", text)
         if text is not None and text != "":
             text = text + "," + recognize_speech(tmp_path)
         else:
             text = recognize_speech(tmp_path)
         # text = text + "," + recognize_speech(tmp_path)
+        print("语音识别结果：", text)
 
     # 处理图像输入
     if image is not None:
